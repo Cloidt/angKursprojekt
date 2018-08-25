@@ -1,9 +1,10 @@
-<app-header></app-header>
+<!--<app-header (ansichtGewechselt)="toggleAnsicht($event)" ></app-header>-->
+<app-header (ansichtGewechselt)="aktuelleAnsicht=$event" ></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipebook></app-recipebook>
-            <app-shoppinglist></app-shoppinglist>
+            <app-recipes *ngIf="aktuelleAnsicht === 'rezepte'"></app-recipes>
+            <app-shoppinglist *ngIf="aktuelleAnsicht === 'einkaufsliste'"></app-shoppinglist>
         </div>
 
     </div>
