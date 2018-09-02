@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // aktuelleAnsicht: string = 'rezepte';
-  aktuelleAnsicht: string = 'einkaufsliste';
+  aktuelleAnsicht: string = 'rezepte';
+  // aktuelleAnsicht: string = 'einkaufsliste';
 
   toggleAnsicht(ansicht: string) {
     this.aktuelleAnsicht = ansicht;

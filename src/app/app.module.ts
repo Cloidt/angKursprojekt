@@ -12,18 +12,20 @@ import {ShoppinglisteditComponent} from './shopping/shoppinglistedit/shoppinglis
 import {HeaderComponent} from './header/header.component';
 import {RecipesComponent} from './recipes/recipes.component';
 import {FormsModule} from '@angular/forms';
+import {DropdownDirective} from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DropdownDirective,
     HeaderComponent,
     IngredientComponent,
-    ShoppinglistComponent,
+    RecipedetailComponent,
     RecipelistComponent,
     RecipeitemComponent,
-    RecipedetailComponent,
-    ShoppinglisteditComponent,
-    RecipesComponent
+    RecipesComponent,
+    ShoppinglistComponent,
+    ShoppinglisteditComponent
   ],
   imports: [
     BrowserModule,

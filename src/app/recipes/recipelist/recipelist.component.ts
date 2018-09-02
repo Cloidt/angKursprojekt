@@ -9,8 +9,8 @@ import { Recipe } from '../recipe.model';
 export class RecipelistComponent implements OnInit {
     @Output() rezeptgewaehltUp = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
-    new Recipe('Keks', 'viele Kekse', 'http://lorempixel.com/80/90/food'),
-    new Recipe('Torte', 'mit Buttercreme', 'http://lorempixel.com/100/70/food'),
+    new Recipe('Keks', 'viele Kekse', 'https://loremflickr.com/320/240/cookies'),
+    new Recipe('Torte', 'mit Buttercreme', 'https://loremflickr.com/320/240/cake'),
   ];
   weiterreichen(rezept: Recipe) {
     this.rezeptgewaehltUp.emit(rezept);
