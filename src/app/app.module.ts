@@ -8,11 +8,12 @@ import {ShoppinglistComponent} from './shopping/shoppinglist/shoppinglist.compon
 import {RecipelistComponent} from './recipes/recipelist/recipelist.component';
 import {RecipeitemComponent} from './recipes/recipelist/recipeitem/recipeitem.component';
 import {RecipedetailComponent} from './recipes/recipedetail/recipedetail.component';
-import {ShoppinglisteditComponent} from './shopping/shoppinglistedit/shoppinglistedit.component';
+import {ShoppinglisteditComponent} from './shopping/shoppinglist/shoppinglistedit/shoppinglistedit.component';
 import {HeaderComponent} from './header/header.component';
 import {RecipesComponent} from './recipes/recipes.component';
 import {FormsModule} from '@angular/forms';
 import {DropdownDirective} from './shared/dropdown.directive';
+import {ShoppingListService} from './shopping/shoppinglist/shoppingList.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import {DropdownDirective} from './shared/dropdown.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

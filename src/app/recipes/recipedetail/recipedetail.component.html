@@ -37,7 +37,13 @@
   </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-      Ingredients
-    </div>
+  <div class="col-xs-12">
+    <h3>Zutaten:</h3>
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let ingr of diesesRezept.ingredients">
+        {{ingr.name}} ({{ingr.menge}} {{ingr.einheit}})
+      </li>
+    </ul>
   </div>
+</div>
