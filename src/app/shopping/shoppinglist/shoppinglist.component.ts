@@ -20,6 +20,7 @@ export class ShoppinglistComponent implements OnInit {
       .subscribe((ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       });
+
   }
 
 

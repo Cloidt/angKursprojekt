@@ -10,12 +10,21 @@ export class ShoppingListService {
     new Ingredient('Zucker', 500, 'g')
 
   ];
+
   getIngredients() {
     return this.ingredients.slice();
   }
-  addIngredient(ingredient:Ingredient) {
+
+  addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
+  addMultipleIngredients(ingredients) {
+    // for (let ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }  // kann man so machen, löst aber viele Events aus. Besser:
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
