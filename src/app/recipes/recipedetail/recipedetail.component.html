@@ -18,13 +18,14 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a href="#" (click)="toShoppingList(diesesRezept.ingredients)">To Shopping List</a>
+          <a style="cursor:pointer" (click)="toShoppingList(diesesRezept.ingredients)">To Shopping List</a>
         </li>
         <li>
-          <a href="#">Edit Recipe</a>
+          <a style="cursor:pointer"
+             (click)="onEditRecipe()">Edit Recipe</a>
         </li>
         <li>
-          <a href="#">Delete Recipe</a>
+          <a style="cursor:pointer">Delete Recipe</a>
         </li>
       </ul>
 

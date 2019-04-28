@@ -29,9 +29,15 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private shoppingListService: ShoppingListService){}
+  constructor(private shoppingListService: ShoppingListService) {
+  }
+
   getRecipes() {
     return this.recipes.slice(); // gibt eine exakte Kopie des arrays heraus, ohne slice wäre es die Referenz auf den originalen Array
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   AddToShoppingList(ingredients: Ingredient[]) {
