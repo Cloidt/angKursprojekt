@@ -1,8 +1,10 @@
 import {Ingredient} from '../../shared/ingredient.model';
 import {EventEmitter} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 export class ShoppingListService {
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  // ingredientsChanged = new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new Subject<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Mehl', 500, 'g'),
@@ -17,7 +19,7 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   addMultipleIngredients(ingredients) {
@@ -25,6 +27,6 @@ export class ShoppingListService {
     //   this.addIngredient(ingredient);
     // }  // kann man so machen, löst aber viele Events aus. Besser:
     this.ingredients.push(...ingredients);
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 }

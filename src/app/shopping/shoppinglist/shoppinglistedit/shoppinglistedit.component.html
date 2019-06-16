@@ -1,23 +1,26 @@
 <div class="row">
   <div class="col-xs-12">
-    <form action="">
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" class="form-control" #nameInput value="Tippfaul">
+          <input type="text" id="name" class="form-control"  value="Tippfaul"
+          name="name" ngModel required>
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Menge</label>
-          <input type="number" id="amount" class="form-control" #amountInput value="666">
+          <input type="number" id="amount" class="form-control"  value="666"
+          name="amount" ngModel required [pattern]="'^[1-9]+[0-9]*$'">
         </div>
         <div class="col-sm-1 form-group">
           <label for="unit">Einheit</label>
-          <input type="text" id="unit" class="form-control" #unitInput value="g">
+          <input type="text" id="unit" class="form-control"  value="g"
+          name="unit" ngModel>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" (click)="addEntry()">Add</button>
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Add</button>
           <button class="btn btn-danger" type="button">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
 
