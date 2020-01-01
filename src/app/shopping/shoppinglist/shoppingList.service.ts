@@ -5,6 +5,7 @@ import {Subject} from 'rxjs/Subject';
 export class ShoppingListService {
   // ingredientsChanged = new EventEmitter<Ingredient[]>();
   ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Mehl', 500, 'g'),
@@ -17,8 +18,18 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
+  getIngredient(index: number) {
+    return this.ingredients[index];
+  }
+
+
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index) {
+    this.ingredients.splice(index,1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
@@ -27,6 +38,11 @@ export class ShoppingListService {
     //   this.addIngredient(ingredient);
     // }  // kann man so machen, löst aber viele Events aus. Besser:
     this.ingredients.push(...ingredients);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
+  updateIngredient(index, newIngedrient: Ingredient) {
+    this.ingredients[index] = newIngedrient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }

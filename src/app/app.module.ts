@@ -11,7 +11,7 @@ import {RecipedetailComponent} from './recipes/recipedetail/recipedetail.compone
 import {ShoppinglisteditComponent} from './shopping/shoppinglist/shoppinglistedit/shoppinglistedit.component';
 import {HeaderComponent} from './header/header.component';
 import {RecipesComponent} from './recipes/recipes.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoppingListService} from './shopping/shoppinglist/shoppingList.service';
 import {AppRoutingModule} from './app-routing.module';
@@ -36,6 +36,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService],
