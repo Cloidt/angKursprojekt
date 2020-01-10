@@ -59,7 +59,9 @@ export class RecipeEditComponent implements OnInit {
   }
   onDeleteIngredient(index:number) {
 
-    (<FormArray>this.recipeForm.get('ingredients').removeAt(index))
+    // (<FormArray>this.recipeForm.get('ingredients').removeAt(index))
+    // ging nach nem update nicht mehr
+    ((this.recipeForm.get('ingredients') as FormArray).removeAt(index))
   }
 
   private initForm() {
